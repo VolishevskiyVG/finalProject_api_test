@@ -9,7 +9,7 @@ import io.restassured.specification.ResponseSpecification;
 import static in.reqres.helpers.CustomApiListener.withCustomTemplates;
 import static io.restassured.RestAssured.with;
 import static io.restassured.filter.log.LogDetail.BODY;
-import static io.restassured.filter.log.LogDetail.STATUS;
+
 
 public class SpecsReqres {
     public static RequestSpecification request = with()
@@ -19,9 +19,7 @@ public class SpecsReqres {
             .contentType(ContentType.JSON);
 
     public static ResponseSpecification responseSpec = new ResponseSpecBuilder()
-            .log(STATUS)
             .log(BODY)
-            .expectStatusCode(201)
             .expectStatusCode(200)
             .build();
 }
